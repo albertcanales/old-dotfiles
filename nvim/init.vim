@@ -1,5 +1,6 @@
 source ~/.config/nvim/plugins.vim
 
+syntax enable
 colorscheme delek
 set clipboard=unnamed
 
@@ -25,3 +26,15 @@ set backspace=indent,eol,start
 
 inoremap jk <Esc>
 
+" Ignore arrow keys
+" nnoremap <up>    <nop>
+" nnoremap <down>  <nop>
+" nnoremap <left>  <nop>
+" nnoremap <right> <nop>
+" inoremap <up>    <nop>
+" inoremap <down>  <nop>
+" inoremap <left>  <nop>
+" inoremap <right> <nop>
+
+""" Plug configuration
+let g:airline_powerline_fonts = 1

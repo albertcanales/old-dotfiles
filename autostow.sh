@@ -3,6 +3,7 @@ CONFIG="$HOME/.config"
 # packages going to $HOME
 HOME_PKG=(
     git
+    xinit
 )
 
 # packages going to $CONFIG
@@ -14,6 +15,10 @@ CONFIG_PKG=(
 CONFIG_INDEP_PKG=(
     alacritty
     nvim
+    plasma-workspace
+    autostart
+    bspwm
+    sxhkd
 )
 
 # given a value and an array, returns if contained
@@ -43,17 +48,25 @@ function get_pkg_dir {
 # stows all packages specified on the arrays
 function restow {
     for package in ${HOME_PKG[@]}; do
-        stow -Rv $package -t $HOME
+        mystow $package $HOME
     done
 
     for package in ${CONFIG_PKG[@]}; do
-        stow -Rv $package -t $CONFIG
+        mystow $package $CONFIG
     done
 
     for package in ${CONFIG_INDEP_PKG[@]}; do
-        stow -Rv $package -t "$CONFIG/$package"
+        mystow $package "$CONFIG/$package"
     done
 }
+
+function mystow {
+    if [ ! -d $2 ]; then
+        mkdir -r $2
+    fi
+    stow -Rv $1 -t $2
+}
+
 
 if [ $# -gt 0 ]; then
     unstowing=0
@@ -68,7 +81,7 @@ if [ $# -gt 0 ]; then
                 stow -Dv $1 -t $target_dir
                 echo "$1 unstowed from $target_dir"
             else
-                stow -Rv $1 -t $target_dir
+                mystow $1 $target_dir
                 echo "$1 stowed at $target_dir"
             fi
         else
