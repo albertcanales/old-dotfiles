@@ -20,6 +20,9 @@ super + v
 super + p
     systemsettings5
 
+super + d
+    dolphin
+
 super + n
     alacritty -e joplin
 

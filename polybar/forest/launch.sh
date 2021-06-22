@@ -12,3 +12,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the bar
 polybar -q main -c "$DIR"/config.ini &
+
+if [[ $(xrandr -q | grep "HDMI-1 connected") ]]; then
+    polybar -q aux -c "$DIR"/config.ini &
+fi
