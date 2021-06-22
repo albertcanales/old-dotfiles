@@ -15,6 +15,7 @@ alias vim="nvim"
 alias eog="gwenview"
 alias g++c="g++ --std=c++17 -Wall -O2 -fsanitize=address"
 alias autostow="(cd ~/dotfiles; ~/dotfiles/autostow.sh)"
+alias launch-polybar="$HOME/.config/polybar/forest/launch.sh"
 
 # Folders
 alias uni="cd ~/Dropbox/Universitat/Q2"

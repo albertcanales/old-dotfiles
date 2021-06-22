@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=polybar
+Comment=A fast and easy-to-use status bar
+Exec=launch-polybar
+Terminal=false
+Type=Application
