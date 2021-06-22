@@ -4,6 +4,7 @@ CONFIG="$HOME/.config"
 HOME_PKG=(
     git
     xinit
+    bash
 )
 
 # packages going to $CONFIG
@@ -15,10 +16,12 @@ CONFIG_PKG=(
 CONFIG_INDEP_PKG=(
     alacritty
     nvim
+    joplin
     plasma-workspace
     autostart
     bspwm
     sxhkd
+    polybar
 )
 
 # given a value and an array, returns if contained
@@ -62,7 +65,7 @@ function restow {
 
 function mystow {
     if [ ! -d $2 ]; then
-        mkdir -r $2
+        mkdir -p $2
     fi
     stow -Rv $1 -t $2
 }

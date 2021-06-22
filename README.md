@@ -12,3 +12,9 @@ following ways:
 
 - **`-D` followed by package names**: Unstows the given packages.
 
+I also use the following aliases to automate the process:
+
+`
+alias autostow="(cd ~/dotfiles; ~/dotfiles/autostow.sh)"
+alias stowedit="vim ~/dotfiles/autostow.sh; autostow"
+`

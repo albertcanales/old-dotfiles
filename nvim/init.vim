@@ -7,7 +7,7 @@ set clipboard=unnamed
 set relativenumber
 set linebreak
 set showbreak=+++
-set textwidth=100
+" set textwidth=100
 set showmatch
 set visualbell
 set hlsearch

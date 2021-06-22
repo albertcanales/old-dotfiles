@@ -48,11 +48,11 @@ _launch=Alt+Space\tAlt+F2\tSearch,Alt+Space\tAlt+F2\tSearch,KRunner
 
 [ksmserver]
 Halt Without Confirmation=Ctrl+Alt+Shift+PgDown,Ctrl+Alt+Shift+PgDown,Apagar sin confirmación
-Lock Session=Meta+L\tCtrl+Alt+L,Meta+L\tCtrl+Alt+L\tScreensaver,Bloquear la sesión
+Lock Session=Meta+L\tCtrl+Alt+L,Meta+L\tCtrl+Alt+L\tScreensaver,Lock Session
 Log Out=Ctrl+Alt+Del,Ctrl+Alt+Del,Cerrar la sesión
 Log Out Without Confirmation=Ctrl+Alt+Shift+Del,Ctrl+Alt+Shift+Del,Cerrar la sesión sin confirmación
 Reboot Without Confirmation=Ctrl+Alt+Shift+PgUp,Ctrl+Alt+Shift+PgUp,Reiniciar sin confirmación
-_k_friendly_name=Gestión de sesiones
+_k_friendly_name=Session Management
 
 [kwin]
 Activate Window Demanding Attention=Ctrl+Alt+A,Ctrl+Alt+A,Activar la ventana que necesite atención
@@ -119,14 +119,14 @@ Walk Through Desktop List=none,none,Recorrer la lista de escritorios
 Walk Through Desktop List (Reverse)=none,none,Recorrer la lista escritorios (hacia atrás)
 Walk Through Desktops=none,none,Recorrer los escritorios
 Walk Through Desktops (Reverse)=none,none,Recorrer los escritorios (hacia atrás)
-Walk Through Windows=Alt+Tab,Alt+Tab,Recorrer las ventanas
-Walk Through Windows (Reverse)=Alt+Shift+Backtab,Alt+Shift+Backtab,Recorrer las ventanas (hacia atrás)
-Walk Through Windows Alternative=none,none,Recorrer las ventanas de modo alternativo
-Walk Through Windows Alternative (Reverse)=none,none,Recorrer las ventanas de modo alternativo (hacia atrás)
-Walk Through Windows of Current Application=Alt+`,Alt+`,Recorrer las ventanas de la aplicación actual
-Walk Through Windows of Current Application (Reverse)=Alt+~,Alt+~,Recorrer las ventanas de la aplicación actual (hacia atrás)
-Walk Through Windows of Current Application Alternative=none,none,Recorrer las ventanas de la aplicación actual de modo alternativo
-Walk Through Windows of Current Application Alternative (Reverse)=none,none,Recorrer las ventanas de la aplicación actual de modo alternativo (hacia atrás)
+Walk Through Windows=Alt+Tab,Alt+Tab,Walk Through Windows
+Walk Through Windows (Reverse)=Alt+Shift+Backtab,Alt+Shift+Backtab,Walk Through Windows (Reverse)
+Walk Through Windows Alternative=none,none,Walk Through Windows Alternative
+Walk Through Windows Alternative (Reverse)=none,none,Walk Through Windows Alternative (Reverse)
+Walk Through Windows of Current Application=Alt+`,Alt+`,Walk Through Windows of Current Application
+Walk Through Windows of Current Application (Reverse)=Alt+~,Alt+~,Walk Through Windows of Current Application (Reverse)
+Walk Through Windows of Current Application Alternative=none,none,Walk Through Windows of Current Application Alternative
+Walk Through Windows of Current Application Alternative (Reverse)=none,none,Walk Through Windows of Current Application Alternative (Reverse)
 Window Above Other Windows=none,none,Mantener la ventana sobre las demás
 Window Below Other Windows=none,none,Mantener la ventana bajo las demás
 Window Close=Alt+F4,Alt+F4,Cerrar la ventana
@@ -213,11 +213,11 @@ stopmedia=Media Stop,Media Stop,Detener la reproducción multimedia
 
 [org.kde.dolphin.desktop]
 _k_friendly_name=Dolphin
-_launch=Meta+E,Meta+E,Dolphin
+_launch=none,Meta+E,Dolphin
 
 [org.kde.plasma.emojier.desktop]
 _k_friendly_name=Selector de emojis
-_launch=Meta+.,Meta+.,Selector de emojis
+_launch=none,Meta+.,Selector de emojis
 
 [org.kde.spectacle.desktop]
 ActiveWindowScreenShot=Meta+Print,Meta+Print,Capturar la ventana activa
@@ -241,7 +241,7 @@ Turn Off Screen=none,none,Apagar la pantalla
 _k_friendly_name=Gestión de energía
 
 [plasmashell]
-_k_friendly_name=Plasma
+_k_friendly_name=Cambio de actividad
 activate task manager entry 1=Meta+1,Meta+1,Activar la entrada 1 del gestor de tareas
 activate task manager entry 10=,Meta+0,Activar la entrada 10 del gestor de tareas
 activate task manager entry 2=Meta+2,Meta+2,Activar la entrada 2 del gestor de tareas
@@ -258,9 +258,9 @@ clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Habilitar las acciones del portapapeles
 cycleNextAction=none,none,Siguiente elemento del historial
 cyclePrevAction=none,none,Anterior elemento del historial
 edit_clipboard=none,none,Editar el contenido...
-manage activities=Meta+Q,Meta+Q,Mostrar el selector de actividad
-next activity=Meta+Tab,none,Recorrer las actividades
-previous activity=Meta+Shift+Tab,none,Recorrer las actividades (en orden inverso)
+manage activities=none,Meta+Q,Mostrar el selector de actividad
+next activity=Meta+Tab,Meta+Tab,Recorrer las actividades
+previous activity=Meta+Shift+Tab,Meta+Shift+Tab,Recorrer las actividades (en sentido inverso)
 repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Invocar manualmente la acción en el portapapeles actual
 show dashboard=Ctrl+F12,Ctrl+F12,Mostrar el escritorio
 show-barcode=none,none,Mostrar código de barras...

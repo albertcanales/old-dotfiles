@@ -126,6 +126,9 @@ View Style=DetailTree
 [PreviewSettings]
 MaximumRemoteSize=0
 
+[Shortcuts]
+Quit=
+
 [WM]
 activeBackground=62,71,78
 activeBlend=236,236,236
