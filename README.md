@@ -1,5 +1,7 @@
 A simple repository for managing my dotfiles, using GNU Stow.
 
+Currently running Manjaro with plasma, bspwm and polybar.
+
 ## autostow.sh
 
 Basic script for automating the stowing process. When a package is added to the dotfiles directory,

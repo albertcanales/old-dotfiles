@@ -18,6 +18,7 @@ alias autostow="(cd ~/dotfiles; ~/dotfiles/autostow.sh)"
 alias launch-polybar="$HOME/.config/polybar/forest/launch.sh"
 
 # Folders
+alias dades="source ~/bin/dades.sh"
 alias uni="cd ~/Dropbox/Universitat/Q2"
 alias dp="cd ~/Dropbox"
 alias aliasedit="vim ~/.bash_aliases; source ~/.bashrc"

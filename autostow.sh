@@ -7,6 +7,10 @@ HOME_PKG=(
     bash
 )
 
+HOME_INDEP_PKG=(
+    bin
+)
+
 # packages going to $CONFIG
 CONFIG_PKG=(
     kde
@@ -38,6 +42,8 @@ function get_pkg_dir {
     if [ $# -eq 1 ]; then
         if contains $1 "${HOME_PKG[@]}"; then
             target_dir=$HOME
+        elif contains $1 "${HOME_INDEP_PKG[@]}"; then
+           target_dir="$HOME/$1"
         elif contains $1 "${CONFIG_PKG[@]}"; then
             target_dir=$CONFIG
         elif contains $1 "${CONFIG_INDEP_PKG[@]}"; then
@@ -54,6 +60,10 @@ function restow {
         mystow $package $HOME
     done
 
+    for package in ${HOME_INDEP_PKG[@]}; do
+        mystow $package "$HOME/$package"
+    done
+    
     for package in ${CONFIG_PKG[@]}; do
         mystow $package $CONFIG
     done
