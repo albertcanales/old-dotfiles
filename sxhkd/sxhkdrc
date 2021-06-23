@@ -9,7 +9,7 @@ super + @space
 
 # Applications
 super + {_, shift + }w
-   firefox --{browser, private-window}
+   firefox --{browser, -, -private-window}
 
 super + e
    subl 
@@ -48,6 +48,12 @@ XF86AudioLowerVolume
 XF86AudioMute
     amixer -q sset Master toggle
 
+XF86MonBrightnessDown
+	brightnessctl -e -d intel_backlight set '5%-'
+
+XF86MonBrightnessUp
+	brightnessctl -e -d intel_backlight set '+5%'
+
 XF86Sleep
     systemctl suspend
 
@@ -65,6 +71,9 @@ XF86WebCam
 
 XF86Calculator
     kcalc
+
+Print
+    flameshot gui
 
 # bspwm hotkeys
 
