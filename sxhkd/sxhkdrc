@@ -9,7 +9,7 @@ super + @space
 
 # Applications
 super + {_, shift + }w
-   firefox --{browser, -, -private-window}
+   firefox --{browser, -private-window}
 
 super + e
    subl 

@@ -9,7 +9,10 @@ function is_mount {
 
 function mount {
     is_mount
-    [[ $mounted -eq 0 ]] && udisksctl mount -b $devpath;
+    if [[ $mounted -eq 0 ]]; then
+        sudo ntfsfix $devpath
+        udisksctl mount -b $devpath
+    fi
 }
 
 function umount {

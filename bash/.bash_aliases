@@ -7,6 +7,7 @@ alias la="ls -la"
 alias untar="tar -zxvf"
 alias sdn="sudo shutdown -h now"
 alias cl="clear"
+alias cleanup-packages='(set -x; sudo pacman -R $(pacman -Qdtq))'
 
 # Programs
 alias gs="git status"
@@ -23,3 +24,7 @@ alias uni="cd ~/Dropbox/Universitat/Q2"
 alias dp="cd ~/Dropbox"
 alias aliasedit="vim ~/.bash_aliases; source ~/.bashrc"
 alias stowedit="vim ~/dotfiles/autostow.sh; autostow"
+
+
+# Variables
+dadespath="/run/media/albert/Dades"

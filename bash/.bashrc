@@ -144,7 +144,7 @@ ex ()
 export HISTCONTROL=ignoreboth
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    source ~/.bash_aliases
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

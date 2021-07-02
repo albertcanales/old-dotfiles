@@ -4,7 +4,8 @@ syntax enable
 colorscheme delek
 set clipboard=unnamed
 
-set relativenumber
+set number relativenumber
+set nu rnu
 set linebreak
 set showbreak=+++
 " set textwidth=100
