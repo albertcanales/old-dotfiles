@@ -17,6 +17,7 @@ alias eog="gwenview"
 alias g++c="g++ --std=c++17 -Wall -O2 -fsanitize=address"
 alias autostow="(cd ~/dotfiles; ~/dotfiles/autostow.sh)"
 alias launch-polybar="$HOME/.config/polybar/forest/launch.sh"
+alias serve="browser-sync start --server --files ."
 
 # Folders
 alias dades="source ~/bin/dades.sh"

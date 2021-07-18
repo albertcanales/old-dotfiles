@@ -26,6 +26,7 @@ CONFIG_INDEP_PKG=(
     bspwm
     sxhkd
     polybar
+    dunst
 )
 
 # given a value and an array, returns if contained

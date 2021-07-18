@@ -26,10 +26,15 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 ~/.config/polybar/forest/launch.sh &
+dunst &
+~/.fehbg &
 
 # Rules
 bspc rule -a Zathura floating=off
 bspc rule -a Joplin desktop=10
+bspc rule -a Todoist desktop=4
 
 # Programs on startup
-joplin &
+dropbox &
+alacritty -e joplin &
+todoist &
