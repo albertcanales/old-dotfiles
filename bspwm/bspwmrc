@@ -36,5 +36,5 @@ bspc rule -a Todoist desktop=4
 
 # Programs on startup
 dropbox &
-alacritty -e joplin &
+# alacritty -e joplin &
 todoist &

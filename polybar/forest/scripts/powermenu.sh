@@ -57,7 +57,7 @@ case $chosen in
         fi
         ;;
     $lock)
-            loginctl lock-session
+            betterlockscreen -l dim
         ;;
     $suspend)
 		ans=$(confirm_exit &)

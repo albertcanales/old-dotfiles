@@ -14,6 +14,7 @@ HOME_INDEP_PKG=(
 # packages going to $CONFIG
 CONFIG_PKG=(
     kde
+    betterlockscreen
 )
 
 # packages going to $CONFIG/<package-name>
@@ -27,6 +28,7 @@ CONFIG_INDEP_PKG=(
     sxhkd
     polybar
     dunst
+    zathura
 )
 
 # given a value and an array, returns if contained

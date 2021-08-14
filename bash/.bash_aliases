@@ -1,5 +1,7 @@
 # System alias
+alias sudo="sudo "
 alias ..="cd .."
+alias ...="cd ../.."
 alias mkdir="mkdir -p"
 alias rm="rm -r"
 alias ls="ls --human-readable --color=auto"
