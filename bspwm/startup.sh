@@ -12,4 +12,3 @@ telegram-desktop > /dev/null &
 dropbox > /dev/null &
 joplin-launch
 
-

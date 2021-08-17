@@ -140,6 +140,8 @@ ex ()
 
 # CUSTOM
 
+export PATH=$PATH:$HOME/bin
+
 # Prevents history from storing duplicating and space-starting commands
 export HISTCONTROL=ignoreboth
 
