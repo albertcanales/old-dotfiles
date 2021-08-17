@@ -1,13 +1,16 @@
-#! /bin/sh
+#!/bin/sh
 
 # MAKE SURE THE FILE IS EXECUTABLE!!!
+
+BSPWM_PATH="$HOME/.config/bspwm"
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 laptop=eDP-1
 external=HDMI-1
 
-if [[ $(xrandr -q | grep "$external connected") ]]; then
+is_external_connected=$(xrandr -q | grep "$external connected")
+if [[ $is_external_connected ]]; then
     echo "Entering multi-screen setup"
     xrandr --output $external --primary --mode 1920x1080 --rotate normal --output $laptop --mode 1920x1080 --rotate normal --left-of $external
     bspc monitor $external -d 5 6 7 8 9 10
@@ -25,16 +28,18 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-~/.config/polybar/forest/launch.sh &
-dunst &
-~/.fehbg &
-
 # Rules
-bspc rule -a Zathura floating=off
-bspc rule -a Joplin desktop=10
-bspc rule -a Todoist desktop=4
+if [[ -x $BSPWM_PATH/rules.sh ]]; then
+    $BSPWM_PATH/rules.sh &
+else
+    notify-send "Rules file not found or not executable"
+fi
 
 # Programs on startup
-dropbox &
-# alacritty -e joplin &
-todoist &
+if [[ -x $BSPWM_PATH/startup.sh ]]; then
+    $BSPWM_PATH/startup.sh &
+else
+    notify-send "Startup file not found or not executable"
+fi
+
+bspc desktop -f 5

@@ -23,7 +23,6 @@ CONFIG_INDEP_PKG=(
     nvim
     joplin
     plasma-workspace
-    autostart
     bspwm
     sxhkd
     polybar
@@ -100,7 +99,6 @@ if [ $# -gt 0 ]; then
                 mystow $1 $target_dir
                 echo "$1 stowed at $target_dir"
             fi
-        else
             echo "WARNING: Package $1 not found, avoiding"
         fi
         shift

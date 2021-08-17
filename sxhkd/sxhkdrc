@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ### Apps, Launcher & Co.
 # Terminal emulator
 super + Return
@@ -24,7 +26,7 @@ super + d
     dolphin
 
 super + n
-    alacritty -e joplin
+    joplin-lauch
 
 # make sxhkd reload its configuration files:
 super + Escape
