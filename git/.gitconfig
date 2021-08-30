@@ -1,3 +1,5 @@
 [user]
 	email = albertcanalesros@gmail.com
 	name = Albert Canales Ros
+[credential]
+	helper = store

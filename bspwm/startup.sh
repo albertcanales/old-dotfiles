@@ -10,5 +10,5 @@ todoist > /dev/null &
 whatsapp-nativefier-dark > /dev/null &
 telegram-desktop > /dev/null &
 dropbox > /dev/null &
-joplin-launch
+$HOME/bin/joplin-launch
 

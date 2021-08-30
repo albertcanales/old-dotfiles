@@ -1,1 +1,1 @@
-alias joplin-launch="alacritty --class Joplin,Joplin -e joplin &"
+alacritty --class Joplin,Joplin -e joplin &

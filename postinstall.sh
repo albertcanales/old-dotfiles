@@ -16,8 +16,10 @@ SYSTEM_PAC = (
     flameshot
     feh
     vifm
+    pcmanfm ffmpegthumbnailer
     gparted
     etcher
+    transmission-gtk
 )
 
 SYSTEM_AUR = (
@@ -49,6 +51,7 @@ PROG_AUR = (
     sublime-text-4
     todoist-electron
     whatsapp-nativefier-dark
+    google-calendar-nativefier
 )
 
 

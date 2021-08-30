@@ -10,6 +10,7 @@ alias untar="tar -zxvf"
 alias sdn="sudo shutdown -h now"
 alias cl="clear"
 alias cleanup-packages='(set -x; sudo pacman -R $(pacman -Qdtq))'
+alias ifconfig="ip addr"
 
 # Programs
 alias gs="git status"

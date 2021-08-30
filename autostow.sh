@@ -28,6 +28,7 @@ CONFIG_INDEP_PKG=(
     polybar
     dunst
     zathura
+    sublime-text-3
 )
 
 # given a value and an array, returns if contained
@@ -99,6 +100,7 @@ if [ $# -gt 0 ]; then
                 mystow $1 $target_dir
                 echo "$1 stowed at $target_dir"
             fi
+        else
             echo "WARNING: Package $1 not found, avoiding"
         fi
         shift
