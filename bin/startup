@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Non-Network dependant
+todoist > /dev/null &
+dropbox > /dev/null &
+$HOME/bin/joplin-launch
+
+# Network dependant
+if [[ $(ping -c 1 www.google.com | grep "0% packet loss") ]]; then
+    whatsapp-nativefier-dark > /dev/null &
+    telegram-desktop > /dev/null &
+else
+    notify-send -u critical "Network dependant startup programs could not be launched"
+fi
+
