@@ -1,0 +1,7 @@
+#!/bin/sh
+
+WALLPAPERS_DIR="$HOME/wallpapers"
+
+feh --no-fehbg --bg-scale "$WALLPAPERS_DIR/arch01.jpg"
+
+

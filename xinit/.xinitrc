@@ -68,5 +68,15 @@ xset r rate 600 25
 
 # Edited for bspwm
 sxhkd &
-urxvt &
+
 exec bspwm
+
+notify-send "This is a test"
+
+# Programs on startup
+if [[ -x $HOME/bin/startup ]]; then
+    $HOME/bin/startup &
+else
+    notify-send -u critical "Startup file not found or not executable"
+
+

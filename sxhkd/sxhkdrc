@@ -149,6 +149,10 @@ super + {_,shift + }{1-9,0}
 super + {Left,Right}
     bspc desktop -f {prev,next}.local
 
+# previous/next occupied desktop in current monitor
+super + ctrl + {Left,Right}
+    bspc desktop -f {prev,next}.occupied.local
+
 # previous/next monitor
 super + {Down,Up}
     bspc monitor -f {prev,next}

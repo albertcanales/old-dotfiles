@@ -15,10 +15,12 @@ if [[ $is_external_connected ]]; then
     xrandr --output $external --primary --mode 1920x1080 --rotate normal --output $laptop --mode 1920x1080 --rotate normal --left-of $external
     bspc monitor $external -d 5 6 7 8 9 10
     bspc monitor $laptop -d 1 2 3 4
+    xdotool mousemove 2880 490
 else
     echo "Entering single-screen setup"
     xrandr --output $laptop --primary --mode 1920x1080 --rotate normal 
     bspc monitor $laptop -d 1 2 3 4 5 6 7 8 9 10
+    xdotool mousemove 960 490
 fi
 
 bspc config border_width         2
@@ -41,12 +43,6 @@ bspc rule -a TelegramDesktop desktop=9
 dunst > /dev/null &
 ~/.fehbg > /dev/null &
 
-# Programs on startup
-if [[ -x $HOME/bin/startup ]]; then
-    $HOME/bin/startup
-else
-    notify-send -u critical "Startup file not found or not executable"
-fi
-
+bspc desktop -f 4
 bspc desktop -f 5
 

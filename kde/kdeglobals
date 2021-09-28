@@ -92,8 +92,11 @@ ForegroundPositive=52,152,219
 ForegroundVisited=145,61,136
 
 [General]
+BrowserApplication=firefox.desktop
 ColorScheme=Breath2
 Name=Breath2
+TerminalApplication=alacritty
+TerminalService=Alacritty.desktop
 shadeSortColumn=true
 toolBarFont=Noto Sans,10,-1,5,50,0,0,0,0,0
 

@@ -1,12 +1,24 @@
 #!/bin/bash
 
+CONNECTION_DELAY=2
+
+function web_exists {
+    start_time=$(date -u +%s)
+    while [[ $(($(date -u +%s)-$start_time)) -lt $CONNECTION_DELAY ]]; do
+        if [[ $(ping -c 1 www.google.com | grep "0% packet loss") ]]; then
+            echo "Connection established"
+            return
+        fi
+    done
+}
+
 # Non-Network dependant
 todoist > /dev/null &
 dropbox > /dev/null &
 $HOME/bin/joplin-launch
 
 # Network dependant
-if [[ $(ping -c 1 www.google.com | grep "0% packet loss") ]]; then
+if [[ $(web_exists) ]]; then
     whatsapp-nativefier-dark > /dev/null &
     telegram-desktop > /dev/null &
 else

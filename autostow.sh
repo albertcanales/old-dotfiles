@@ -5,10 +5,12 @@ HOME_PKG=(
     git
     xinit
     bash
+    feh
 )
 
 HOME_INDEP_PKG=(
     bin
+    wallpapers
 )
 
 # packages going to $CONFIG

@@ -2,42 +2,45 @@
 
 devpath="/dev/sda4"
 
-function is_mount {
-    out=$(udisksctl info -b $devpath | grep MountPoints)
-    [[ $out == */* ]] && mounted=1 || mounted=0
+# Outputs the mounted path the mounted path
+function mounted_path {
+    udisksctl info -b $devpath | grep MountPoints | cut -c 25-
 }
 
+# Mounts dades partition, sudo required for ntfsfix
 function mount {
-    is_mount
-    if [[ $mounted -eq 0 ]]; then
-        sudo ntfsfix $devpath
+    if [[ -z $(mounted_path) ]]; then
         udisksctl mount -b $devpath
+        if [[ -z $(mounted_path) ]]; then
+            echo "Could not mount, running ntfsfix"
+            sudo ntfsfix $devpath
+        fi
     fi
 }
 
+# Unmounts dades partition
 function umount {
-    is_mount
-    [[ $mounted -eq 1 ]] && udisksctl unmount -b $devpath;
+    [[ $(mounted_path) ]] && udisksctl unmount -b $devpath;
 } 
 
+# If partition mounted, cd's to it
 function cdades {
-    mount
-    newpath=$(udisksctl info -b $devpath | grep MountPoints)
-    cd ${newpath:24}
+    [[ $(mounted_path) ]] && cd $(mounted_path)
 }
 
-if [ $# -gt 0 ]; then
+while [[ $# -gt 0 ]]; do
     case $1 in
-        -m)
+        m)
             mount
             ;;
-        -u)
+        u)
             umount
             ;;
-        *)
-            cdades
+        p)
+            mounted_path
             ;;
-    esac
-else
-    cdades
-fi
+        c)
+            cdades
+   esac
+   shift
+done

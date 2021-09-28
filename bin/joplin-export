@@ -1,0 +1,13 @@
+#!/bin/bash
+PATH=$PATH:"$HOME/bin"
+
+REL_BACKUP_DIR="/JoplinBackup"
+
+dades m
+if [[ $(dades p) ]]; then
+    BACKUP_DIR=$(dades p)$REL_BACKUP_DIR
+    [[ ! -d $BACKUP_DIR ]] && mkdir -p $BACKUP_DIR
+    joplin export --format jex "$BACKUP_DIR/$(date +'%Y_%m_%d').jex" && echo "Exported successfully"
+else
+    echo "ERROR: Could not mount data partition"
+fi

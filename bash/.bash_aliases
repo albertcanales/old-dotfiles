@@ -10,7 +10,7 @@ alias untar="tar -zxvf"
 alias sdn="sudo shutdown -h now"
 alias cl="clear"
 alias cleanup-packages='(set -x; sudo pacman -R $(pacman -Qdtq))'
-alias ifconfig="ip addr"
+alias ifconfig="nmcli"
 
 # Programs
 alias gs="git status"
@@ -19,15 +19,14 @@ alias vim="nvim"
 alias eog="gwenview"
 alias g++c="g++ --std=c++17 -Wall -O2 -fsanitize=address"
 alias autostow="(cd ~/dotfiles; ~/dotfiles/autostow.sh)"
-alias launch-polybar="$HOME/.config/polybar/forest/launch.sh"
+alias polybar-launch="$HOME/.config/polybar/forest/launch.sh"
 alias serve="browser-sync start --server --files ."
+alias dades="source dades"
+alias alacritty-launch="alacritty > /dev/null/ &"
 
 # Folders
-alias uni="cd ~/Dropbox/Universitat/Q2"
+alias uni="cd ~/Dropbox/Universitat/Q3"
 alias dp="cd ~/Dropbox"
 alias aliasedit="vim ~/.bash_aliases; source ~/.bashrc"
 alias stowedit="vim ~/dotfiles/autostow.sh; autostow"
-
-
-# Variables
-dadespath="/run/media/albert/Dades"
+alias postinstalledit="vim ~/dotfiles/postinstall.sh"

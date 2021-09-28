@@ -9,17 +9,15 @@ SYSTEM_PAC = (
     sxhkd
     rofi
     picom
-    dunst
-    stalonetray
+    dunst ttf-roboto ttf-roboto-mono
+    stalonetray # Necessary for polybar
     brightnessctl
     xorg-xinput
     flameshot
     feh
     vifm
     pcmanfm ffmpegthumbnailer
-    gparted
-    etcher
-    transmission-gtk
+    xdotool # for moving mouse
 )
 
 SYSTEM_AUR = (
@@ -40,6 +38,9 @@ PROG_PAC = (
     virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat
     bitwarden
     pdfjam
+    gparted
+    etcher
+    transmission-gtk
     telegram
 )
 
