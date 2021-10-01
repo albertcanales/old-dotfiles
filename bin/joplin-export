@@ -1,13 +1,30 @@
 #!/bin/bash
+
+###### NEEDS <dateutils> PACKAGE INSTALLED ######
+
 PATH=$PATH:"$HOME/bin"
 
 REL_BACKUP_DIR="/JoplinBackup"
+
+function remove_past {
+    DAYS=30
+    count=0
+    for file in $(ls $BACKUP_DIR); do
+        base=$(basename -s .jex $BACKUP_DIR/$file)
+        if [[ $(datediff -i "%Y_%m_%d" $base $(date +'%Y_%m_%d')) -gt $DAYS ]]; then
+            # echo "Going to remove $BACKUP_DIR/$file"
+            rm $BACKUP_DIR/$file
+        fi
+    done
+    [[ $count -gt 0 ]] && echo "$count past backups have been removed"
+}
 
 dades m
 if [[ $(dades p) ]]; then
     BACKUP_DIR=$(dades p)$REL_BACKUP_DIR
     [[ ! -d $BACKUP_DIR ]] && mkdir -p $BACKUP_DIR
     joplin export --format jex "$BACKUP_DIR/$(date +'%Y_%m_%d').jex" && echo "Exported successfully"
+    remove_past
 else
     echo "ERROR: Could not mount data partition"
 fi

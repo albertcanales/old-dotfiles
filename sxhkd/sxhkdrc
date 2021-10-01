@@ -146,12 +146,12 @@ super + {_,shift + }{1-9,0}
     bspc {desktop -f,node -d} '^{1-9,10}'
 
 # previous/next desktop in current monitor
-super + {Left,Right}
-    bspc desktop -f {prev,next}.local
+super + {_, shift + }{Left,Right}
+    bspc {desktop -f,node -d} {prev,next}.local
 
 # previous/next occupied desktop in current monitor
-super + ctrl + {Left,Right}
-    bspc desktop -f {prev,next}.occupied.local
+super + ctrl + {_, shift + }{Left,Right}
+    bspc {desktop -f,node -d} {prev,next}.occupied.local
 
 # previous/next monitor
 super + {Down,Up}
