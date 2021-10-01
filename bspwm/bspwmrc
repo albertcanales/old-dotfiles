@@ -2,26 +2,9 @@
 
 # MAKE SURE THE FILE IS EXECUTABLE!!!
 
-BSPWM_PATH="$HOME/.config/bspwm"
-
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-laptop=eDP-1
-external=HDMI-1
-
-is_external_connected=$(xrandr -q | grep "$external connected")
-if [[ $is_external_connected ]]; then
-    echo "Entering multi-screen setup"
-    xrandr --output $external --primary --mode 1920x1080 --rotate normal --output $laptop --mode 1920x1080 --rotate normal --left-of $external
-    bspc monitor $external -d 5 6 7 8 9 10
-    bspc monitor $laptop -d 1 2 3 4
-    xdotool mousemove 2880 490
-else
-    echo "Entering single-screen setup"
-    xrandr --output $laptop --primary --mode 1920x1080 --rotate normal 
-    bspc monitor $laptop -d 1 2 3 4 5 6 7 8 9 10
-    xdotool mousemove 960 490
-fi
+$HOME/bin/monitors
 
 bspc config border_width         2
 bspc config window_gap          12

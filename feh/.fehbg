@@ -2,6 +2,10 @@
 
 WALLPAPERS_DIR="$HOME/wallpapers"
 
-feh --no-fehbg --bg-scale "$WALLPAPERS_DIR/arch01.jpg"
+if [[ $($HOME/bin/monitors status) == "desktop" ]] && [ $(($RANDOM%100)) -lt 10 ]; then
+    feh --no-fehbg --bg-scale "$WALLPAPERS_DIR/linus.png"
+else
+    feh --no-fehbg --bg-scale "$WALLPAPERS_DIR/arch01.jpg"
+fi
 
 
