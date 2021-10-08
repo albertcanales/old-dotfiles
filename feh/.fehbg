@@ -2,10 +2,21 @@
 
 WALLPAPERS_DIR="$HOME/wallpapers"
 
-if [[ $($HOME/bin/monitors status) == "desktop" ]] && [ $(($RANDOM%100)) -lt 10 ]; then
-    feh --no-fehbg --bg-scale "$WALLPAPERS_DIR/linus.png"
+function set_wallpaper() {
+    local file=$(ls $WALLPAPERS_DIR/*"$1"*.png | shuf -n 1)
+    feh --randomize --no-fehbg --bg-scale "$file"
+}
+
+if [[ $# -gt 0 ]]; then
+    set_wallpaper $1
 else
-    feh --no-fehbg --bg-scale "$WALLPAPERS_DIR/arch01.jpg"
+    set_wallpaper purple1
 fi
+
+# if [[ $($HOME/bin/monitors status) == "desktop" ]] && [ $(($RANDOM%100)) -lt 10 ]; then
+#     feh --no-fehbg --bg-scale "$WALLPAPERS_DIR/linus.png"
+# else
+#     feh --no-fehbg --bg-scale "$WALLPAPERS_DIR/arch01.png"
+# fi
 
 

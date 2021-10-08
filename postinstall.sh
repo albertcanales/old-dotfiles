@@ -22,6 +22,8 @@ SYSTEM_PAC=(
     xdotool # for moving mouse
     dateutils # oneliners for dates
     arandr # gui for xrandr
+    playerctl
+    ttf-jetbrains-mono
 )
 
 SYSTEM_AUR=(

@@ -4,6 +4,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'crusoexia/vim-monokai'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " File system explorer
 Plug 'preservim/nerdtree'

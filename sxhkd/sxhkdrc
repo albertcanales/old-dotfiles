@@ -16,17 +16,8 @@ super + {_, shift + }w
 super + e
    subl 
 
-super + v
-    alacritty -e vim
-
-super + p
-    systemsettings5
-
 super + d
     pcmanfm
-
-super + n
-    $HOME/bin/joplin-launch
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -60,13 +51,16 @@ XF86Sleep
     systemctl suspend
 
 XF86AudioPlay
-    $HOME/.config/bspwm/panel/notify_mpd -t 
+    playerctl play-pause
         
 XF86AudioNext
-    $HOME/.config/bspwm/panel/notify_mpd -n
+    playerctl next
 
 XF86AudioPrev
-    $HOME/.config/bspwm/panel/notify_mpd -p
+    playerctl previous
+
+XF86AudioStop
+    playerctl stop
 
 XF86WebCam
     sed -i 's/card [0-9]/card {0,1}/' $HOME/.asoundrc

@@ -27,6 +27,7 @@ alias alacritty-launch="alacritty > /dev/null/ &"
 # Folders
 alias uni="cd ~/Dropbox/Universitat/Q3"
 alias dp="cd ~/Dropbox"
+alias dot="cd ~/dotfiles"
 alias aliasedit="vim ~/.bash_aliases; source ~/.bashrc"
 alias stowedit="vim ~/dotfiles/autostow.sh; autostow"
 alias postinstalledit="vim ~/dotfiles/postinstall.sh"

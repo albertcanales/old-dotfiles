@@ -31,6 +31,8 @@ CONFIG_INDEP_PKG=(
     dunst
     zathura
     sublime-text-3
+    rofi
+    picom
 )
 
 # given a value and an array, returns if contained

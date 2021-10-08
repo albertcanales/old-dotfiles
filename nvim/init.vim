@@ -1,8 +1,8 @@
 source ~/.config/nvim/plugins.vim
 
-" syntax on
-" colorscheme monokai
-" set termguicolors
+syntax on
+colorscheme dracula
+set termguicolors
 set clipboard=unnamed
 
 set number relativenumber
