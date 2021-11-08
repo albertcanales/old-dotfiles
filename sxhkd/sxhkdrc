@@ -11,13 +11,16 @@ super + @space
 
 # Applications
 super + {_, shift + }w
-   firefox --{browser,private-window}
+   brave{_, --incognito}
 
 super + e
    subl 
 
 super + d
     pcmanfm
+
+super + x
+    dmenufm
 
 # make sxhkd reload its configuration files:
 super + Escape

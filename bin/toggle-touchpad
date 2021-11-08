@@ -1,3 +1,5 @@
+#!/bin/bash
+
 TOUCHPAD_ID=20
 
 enabled_line=$(xinput list-props $TOUCHPAD_ID | grep "Device Enabled")

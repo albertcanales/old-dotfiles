@@ -22,10 +22,10 @@ alias autostow="(cd ~/dotfiles; ~/dotfiles/autostow.sh)"
 alias polybar-launch="$HOME/.config/polybar/forest/launch.sh"
 alias serve="browser-sync start --server --files ."
 alias dades="source dades"
-alias alacritty-launch="alacritty > /dev/null/ &"
-
+alias scp="scp -F $HOME/.ssh/config "
 # Folders
 alias uni="cd ~/Dropbox/Universitat/Q3"
+alias practpro2="cd ~/Dropbox/Universitat/Q3/pro2/practica/practica-pro2"
 alias dp="cd ~/Dropbox"
 alias dot="cd ~/dotfiles"
 alias aliasedit="vim ~/.bash_aliases; source ~/.bashrc"

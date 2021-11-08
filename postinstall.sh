@@ -1,3 +1,5 @@
+#!/bin/bash
+
 user="albert"
 
 SYSTEM_PAC=(
@@ -17,18 +19,19 @@ SYSTEM_PAC=(
     xorg-xinput
     flameshot
     feh
-    vifm
     pcmanfm ffmpegthumbnailer
     xdotool # for moving mouse
     dateutils # oneliners for dates
     arandr # gui for xrandr
     playerctl
     ttf-jetbrains-mono
+    xf86-input-wacom
 )
 
 SYSTEM_AUR=(
     betterlockscreen
     polybar-git # Necessary as long as release version is < 3.5.6
+    dmenufm
 )
 
 PROG_PAC=(
@@ -45,9 +48,11 @@ PROG_PAC=(
     bitwarden
     pdfjam
     gparted
-    etcher
     transmission-gtk
     telegram
+    ventoy 
+    brave-browser
+    doxygen
 )
 
 PROG_AUR=(
@@ -59,6 +64,7 @@ PROG_AUR=(
     todoist-electron
     whatsapp-nativefier-dark
     google-calendar-nativefier
+    typora
 )
 
 

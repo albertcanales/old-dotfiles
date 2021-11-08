@@ -149,4 +149,10 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# if [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" && -z ${BASH_EXECUTION_STRING} ]]
+# then
+# 	exec fish
+# fi
+
