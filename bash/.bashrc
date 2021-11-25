@@ -141,6 +141,7 @@ ex ()
 # CUSTOM
 
 export PATH=$PATH:$HOME/bin
+export EDITOR=nvim
 
 # Prevents history from storing duplicating and space-starting commands
 export HISTCONTROL=ignoreboth
