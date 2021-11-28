@@ -26,6 +26,8 @@ SYSTEM_PAC=(
     playerctl
     ttf-jetbrains-mono
     xf86-input-wacom
+    lxappearance
+    network-manager-applet
 )
 
 SYSTEM_AUR=(
@@ -58,8 +60,8 @@ PROG_PAC=(
 PROG_AUR=(
     android-studio
     cadmus
-    dropbox
-    joplin-cli
+    maestral
+    joplin-desktop
     sublime-text-4
     todoist-electron
     whatsapp-nativefier-dark
@@ -93,7 +95,11 @@ function installer() {
         if [[ $manager == "pacman" ]]; then
             pacman -S --noconfirm $package
         elif [[ $manager == "yay" ]]; then
-            sudo -u $user yay -S --noconfirm $package
+            if yay --version > /dev/null; then
+                sudo -u $user yay -S --noconfirm $package
+            else
+                echo "ERROR: yay is not installed!! Install it from pacman or add it into SYSTEM_PAC"
+            fi
         fi
     done
 }

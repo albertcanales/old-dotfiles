@@ -14,7 +14,7 @@ super + {_, shift + }w
    brave{_, --incognito}
 
 super + e
-   subl 
+    [[ $(pgrep sublime) ]] && subl -n || subl
 
 super + d
     pcmanfm

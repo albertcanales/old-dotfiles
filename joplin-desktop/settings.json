@@ -1,0 +1,36 @@
+{
+	"$schema": "https://joplinapp.org/schema/settings.json",
+	"locale": "es_ES",
+	"sync.target": 7,
+	"api.token": "108f1aa765b99a931a5a3865c6c7c981f989f5b8ef549c464238f56e71fe67824d1c969f6d451f1c3e7e1f456c97c7592fa4d8855eff8e7150f211e5f7c7caaf",
+	"markdown.plugin.softbreaks": false,
+	"markdown.plugin.typographer": false,
+	"spellChecker.language": "ca",
+	"ui.layout": {
+		"key": "root",
+		"children": [
+			{
+				"key": "sideBar",
+				"width": 250,
+				"visible": true
+			},
+			{
+				"key": "noteList",
+				"width": 250,
+				"visible": true
+			},
+			{
+				"key": "editor",
+				"visible": true
+			}
+		],
+		"visible": true
+	},
+	"noteVisiblePanes": [
+		"editor"
+	],
+	"theme": 5,
+	"editor.keyboardMode": "vim",
+	"windowContentZoomFactor": 120,
+	"editor.codeView": true
+}

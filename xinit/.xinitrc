@@ -78,5 +78,8 @@ if [[ -x $HOME/bin/startup ]]; then
     $HOME/bin/startup &
 else
     notify-send -u critical "Startup file not found or not executable"
+fi
 
+# Variable for Java Applications (matlab specifically)
+export _JAVA_AWT_WM_NONREPARENTING=1
 
