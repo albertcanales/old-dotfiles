@@ -14,8 +14,7 @@ function web_exists {
 
 # Non-Network dependant
 todoist > /dev/null &
-dropbox > /dev/null &
-$HOME/bin/joplin-launch
+joplin-desktop > /dev/null &
 
 # Network dependant
 if [[ $(web_exists) ]]; then

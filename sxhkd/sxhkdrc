@@ -22,9 +22,16 @@ super + d
 super + x
     dmenufm
 
+# Patch while autostart does not work
+super + Home
+    $HOME/bin/startup
+
 # make sxhkd reload its configuration files:
 super + Escape
     pkill -USR1 -x sxhkd
+
+super + {_, shift + }Pause
+    {dunstctl close-all, $HOME/bin/toggle-dunst}
 
 # power hotkeys
 
