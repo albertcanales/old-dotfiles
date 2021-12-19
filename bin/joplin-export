@@ -1,6 +1,7 @@
 #!/bin/bash
 
-###### NEEDS <dateutils> PACKAGE INSTALLED ######
+# Exports the Joplin data in the Dades partition
+# Requires: joplin-cli, dateutuils, dades script
 
 PATH=$PATH:"$HOME/bin"
 

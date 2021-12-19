@@ -1,22 +1,60 @@
-A simple repository for managing my dotfiles, using GNU Stow.
+A simple repository for managing my dotfiles, using my own system based on GNU Stow.
 
-Currently running Manjaro with plasma, bspwm and polybar.
+Currently running Manjaro, bspwm and Polybar.
 
-## autostow.sh
+## Info
 
-Basic script for automating the stowing process. When a package is added to the dotfiles directory,
-it should be also added to the corresponding array in `autostow.sh`. The script can be used in the
-following ways:
+```
+Theme         = Dracula
+WM            = bspwm
+Bar           = Polybar
+Terminal      = alacritty
+Font          = (pending)
+Wallpapers    = on wallpapers module
+Shell         = bash
+Editor        = Sublime or nvim
+Notifications = dunst
+```
 
-- **No arguments**: Stows all packages specified in the arrays.
+## Installation
 
-- **Package names as arguments**: Stows only the given packages.
+`cd` to your cloned repository
 
-- **`-D` followed by package names**: Unstows the given packages.
+`./postinstall.sh` to install packages
+
+`./autostow` to apply the configuration
+
+## Scripts
+
+### autostow
+
+Automates the stowing process. The dotfiles are divided into *modules* (directories in the dotfiles directory).
+
+Each module should be added on the corresponding `autostow` array, depending on the location of the dotfiles.
+
+When autostowing the package, the contents of the module will automatically be added to the given location, creating it if necessary.
+
+For convenience, some usages are predefined:
+
+- **No arguments**: Autostows all modules.
+
+- **Modules as arguments**: Autostows only the given modules.
+
+- **`-D` followed by modules names**: Unstows the given modules.
 
 I also use the following aliases to automate the process:
 
 ```
-alias autostow="(cd ~/dotfiles; ~/dotfiles/autostow.sh)"
-alias stowedit="vim ~/dotfiles/autostow.sh; autostow"
+alias autostow="cd ~/dotfiles && ~/dotfiles/autostow"
+alias stowedit="vim ~/dotfiles/autostow && autostow"
 ```
+
+Each time you add a new file to a module, remember to autostow that module.
+
+### postinstall
+
+Automates the downloading of all my used packages, dividing the system ones from the rest. Requires `pacman` and `yay`.
+
+Must be run as root, and the variable `user` stores the name of the non-root user (available with `whoami`).
+
+When executed, the program only installs the desired set of packages. For modifying the packages, use the arrays defined at the start of `postinstall.sh`.

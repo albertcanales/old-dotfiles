@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Opens the programs on startup, restricting the network-dependant if connection is not available
+# Requires: date, ping, the programs used to autostart
+
 CONNECTION_DELAY=2
 
 function web_exists {

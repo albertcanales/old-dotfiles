@@ -11,7 +11,7 @@ super + @space
 
 # Applications
 super + {_, shift + }w
-   brave{_, --incognito}
+    firefox{_, --private-window}
 
 super + e
     [[ $(pgrep sublime) ]] && subl -n || subl

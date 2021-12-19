@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Automates the access to the data partition (shared with Windows) from the terminal
+# Requires: udisksctl, ntfsfix
+
 devpath="/dev/sda4"
 
 # Outputs the mounted path the mounted path

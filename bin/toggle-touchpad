@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Toggles the touchpad and notifies the user
+# Requires: xinput
+
+# Can be found with xinput list-props
 TOUCHPAD_ID=20
 
 enabled_line=$(xinput list-props $TOUCHPAD_ID | grep "Device Enabled")

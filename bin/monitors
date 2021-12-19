@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Automates adding or removing monitors, updating bspwm on the process
+# Requires: xrandr, bspc, xdotool, arandr
+
 LAPTOP=eDP-1
 EXTERNAL=HDMI-1
 
