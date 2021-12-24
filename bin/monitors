@@ -8,47 +8,79 @@ EXTERNAL=HDMI-1
 
 STATUS_FILE="$HOME/bin/.monitors_status"
 
-function desktop_mode {
+function lleida_mode {
+    xrandr --output eDP-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off
+    bspc monitor $LAPTOP -d 1 2 3 4
+    bspc monitor $EXTERNAL -d 5 6 7 8 9 10
+    xdotool mousemove 960 490
+    echo lleida >> $STATUS_FILE 
+}
+
+function bcn_mode {
     xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1 --off
     bspc monitor $LAPTOP -d 1 2 3 4
     bspc monitor $EXTERNAL -d 5 6 7 8 9 10
     xdotool mousemove 2880 490
-    echo desktop > $STATUS_FILE 
+    polybar-launch
+    echo bcn >> $STATUS_FILE 
 }
 
 function laptop_mode {
     xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off
     bspc monitor $LAPTOP -d 1 2 3 4 5 6 7 8 9 10
     xdotool mousemove 960 490
-    echo laptop > $STATUS_FILE
+    polybar-launch
+    echo laptop >> $STATUS_FILE
 }
 
-function auto {
+function custom_mode {
+    echo "Opening arandr..."
+    arandr
+    for monitor in $(xrandr -q | grep " connected" | cut -d " " -f 1); do
+        read -p "Desktops for monitor $monitor: " desktops
+        bspc monitor $monitor -d $desktops
+    done
+    polybar-launch
+    echo custom >> $STATUS_FILE
+}
+
+function auto_mode {
     if [[ $(xrandr -q | grep "$EXTERNAL connected") ]]; then
-        desktop_mode
+        select_mode $(grep -Eo $regex_desktop $STATUS_FILE | tac | tail -n 1)
     else
         laptop_mode
     fi
 }
 
-if [[ $# -gt 0 ]]; then
+function last_mode {
+    select_mode &(tail -n 1 $STATUS_FILE)
+}
+
+function select_mode() {
     option=$1
+    echo "Selected $option"
     if [[ $option == "status" ]]; then
         cat $STATUS_FILE
-    elif [[ $option == "desktop" ]]; then
-        desktop_mode
+    elif [[ $option == "bcn" ]]; then
+        bcn_mode
+    elif [[ $option == "lleida" ]]; then
+        lleida_mode
     elif [[ $option == "laptop" ]]; then
         laptop_mode
-    else # Custom
-        echo "Opening arandr..."
-        arandr
-        for monitor in $(xrandr -q | grep " connected" | cut -d " " -f 1); do
-            read -p "Desktops for monitor $monitor: " desktops
-            bspc monitor $monitor -d $desktops
-        done
-        echo custom > $STATUS_FILE
+    elif [[ $option == "auto" ]]; then
+        auto_mode 
+    elif [[ $option == "last" ]]; then
+        last_mode
+    elif [[ $option == "custom" ]]; then
+        custom_mode
+    else
+        exit 1
     fi
+    exit 0
+}
+
+if [[ $# -gt 0 ]]; then
+    select_mode $1 || auto_mode
 else
-    auto
+    auto_mode
 fi
-   
