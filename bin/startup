@@ -18,6 +18,7 @@ function web_exists {
 # Non-Network dependant
 todoist > /dev/null &
 joplin-desktop > /dev/null &
+thunderbird > /dev/null &
 
 # Network dependant
 if [[ $(web_exists) ]]; then

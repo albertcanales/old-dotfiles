@@ -25,10 +25,12 @@ bspc rule -a Joplin desktop=10
 bspc rule -a Todoist desktop=4
 bspc rule -a whatsapp-nativefier-d52542 desktop=9
 bspc rule -a TelegramDesktop desktop=9
-bspc rule -a Spotify desktop=8
+bspc rule -a Spotify desktop=3
+bspc rule -a Thunderbird desktop=8
+
 
 # System programs
-~/.config/polybar/forest/launch.sh > /dev/null &
+$HOME/bin/polybar-launch > /dev/null &
 dunst > /dev/null &
 ~/.fehbg > /dev/null &
 picom &
