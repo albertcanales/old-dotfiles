@@ -11,6 +11,9 @@ alias sdn="sudo shutdown -h now"
 alias cl="clear"
 alias cleanup-packages='(set -x; sudo pacman -R $(pacman -Qdtq))'
 alias ifconfig="nmcli"
+alias bt-reset="systemctl restart bluetooth.service"
+alias homeup="sudo wg-quick up home"
+alias homedown="sudo wg-quick down home"
 
 # Programs
 alias gs="git status"
@@ -22,12 +25,12 @@ alias autostow="cd ~/dotfiles && ~/dotfiles/autostow"
 alias serve="browser-sync start --server --files ."
 alias dades="source dades"
 alias scp="scp -F $HOME/.ssh/config "
+alias f5upc="f5fpc -s -x -t https://upclink.upc.edu"
 
 # Folders
-alias uni="cd ~/Dropbox/Universitat/Q3"
-alias dp="cd ~/Dropbox"
+alias uni="cd ~/nextcloud/Acadèmic/Universitat/Q4"
+alias next="cd ~/nextcloud"
 alias dot="cd ~/dotfiles"
-alias algo="cd ~/Dropbox/Work/Codelearn/AventuraAlgorismia"
 alias aliasedit="vim ~/.bash_aliases; source ~/.bashrc"
 alias stowedit="vim ~/dotfiles/autostow && autostow"
 alias postinstalledit="vim ~/dotfiles/postinstall.sh"

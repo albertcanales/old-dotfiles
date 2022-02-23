@@ -2,6 +2,10 @@
 
 user="albert"
 
+# Additionally the following packages are installed on Appimages 
+# due to faulty pacman or yay packages
+# Joplin, Nextcloud Client 
+
 SYSTEM_PAC=(
     base-devel
     cmake
@@ -28,6 +32,7 @@ SYSTEM_PAC=(
     xf86-input-wacom
     lxappearance
     network-manager-applet
+    wireguard-tools
 )
 
 SYSTEM_AUR=(
@@ -60,7 +65,6 @@ PROG_PAC=(
 PROG_AUR=(
     android-studio
     cadmus
-    maestral
     joplin-desktop
     sublime-text-4
     todoist-electron

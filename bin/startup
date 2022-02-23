@@ -15,16 +15,17 @@ function web_exists {
     done
 }
 
-# Non-Network dependant
+# Non-Network dependant programs
 todoist > /dev/null &
 joplin-desktop > /dev/null &
 thunderbird > /dev/null &
+whatsapp-nativefier-dark > /dev/null &
+telegram-desktop > /dev/null &
 
-# Network dependant
+# Network dependant programs
 if [[ $(web_exists) ]]; then
-    whatsapp-nativefier-dark > /dev/null &
-    telegram-desktop > /dev/null &
+
 else
-    notify-send -u critical "Network dependant startup programs could not be launched"
+    # notify-send -u critical "Network dependant startup programs could not be launched"
 fi
 

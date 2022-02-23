@@ -47,7 +47,7 @@ function custom_mode {
 
 function auto_mode {
     if [[ $(xrandr -q | grep "$EXTERNAL connected") ]]; then
-        select_mode $(grep -Eo "lleida||bcn" $STATUS_FILE | tac | tail -n 1)
+        select_mode $(grep -Eo "lleida||bcn" $STATUS_FILE | tac | head -n 1)
     else
         laptop_mode
     fi

@@ -90,7 +90,7 @@ Print
 # bspwm hotkeys
 
 # quit/restart bspwm
-super + alt + {q,r}
+super + alt + shift + {q,r}
     bspc {quit,wm -r}
 
 # close and kill
