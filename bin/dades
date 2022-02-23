@@ -1,8 +1,27 @@
 #!/bin/bash
 
-# Automates the access to the data partition (shared with Windows) from the terminal
+# Automates mounting and unmounting partitions using udisksctl from the terminal, fixing ntfs if necessary.
 # Requires: udisksctl, ntfsfix
 
+# USAGE dades [OPTIONS] ACTIONS ...
+
+# Available options are:
+#   --target TARGET: applies actions to the given target
+
+# Available actions are:
+#   m: Mounts the partition
+#   u: Unmounts the partition
+#   p: Prints path to the mounted partition (if mounted)
+#   c: cd's to the partition. For this option to work add the following alias to your aliases file, or run always with source:
+#        alias dades="source dades"
+
+
+
+# Example usage:
+#   dades --target /dev/sda7 m c
+#   Mounts the partition /dev/sda7 using udisksctl and changes the directory to the mounted path
+
+# The default partition, used when no target is specified
 devpath="/dev/sda4"
 
 # Outputs the mounted path the mounted path
@@ -32,6 +51,12 @@ function cdades {
 }
 
 while [[ $# -gt 0 ]]; do
+    if [[ $1 == "--target" ]]; then
+        shift
+        devpath=$1
+        [[ -e "$devpath" ]] || ( echo "$devpath is not a valid path" && exit 1)
+        shift
+    fi
     case $1 in
         m)
             mount
