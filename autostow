@@ -1,0 +1,110 @@
+#!/bin/bash
+
+CONFIG_DIR="$HOME/.config"
+
+# packages going to $HOME/
+HOME_PKG=(
+    git
+    xinit
+    bash
+    feh
+)
+
+# packages going to $HOME/<package-name>/
+HOME_INDEP_PKG=(
+    bin
+    wallpapers
+)
+
+# packages going to $CONFIG_DIR/
+CONFIG_PKG=(
+    kde
+    betterlockscreen
+)
+
+# packages going to $CONFIG_DIR/<package-name>
+CONFIG_INDEP_PKG=(
+    alacritty
+    nvim
+    joplin-desktop
+    plasma-workspace
+    bspwm
+    sxhkd
+    polybar
+    dunst
+    zathura
+    sublime-text-3
+    picom
+    Typora
+    dmenufm
+    spicetify
+    xournalpp
+)
+
+# packages going to custom directory
+declare -A CUSTOM
+CUSTOM=(
+)
+
+# given a package, outputs its target directory
+function get_pkg_dir {
+    if [[ " ${HOME_PKG[*]} " =~ " $1 " ]]; then
+        echo $HOME
+    elif [[ " ${HOME_INDEP_PKG[*]} " =~ " $1 " ]]; then
+        echo "$HOME/$1"
+    elif [[ " ${CONFIG_PKG[*]} " =~ " $1 " ]]; then
+        echo $CONFIG_DIR
+    elif [[ " ${CONFIG_INDEP_PKG[*]} " =~ " $1 " ]]; then
+        echo "$CONFIG_DIR/$1"
+    elif [[ " ${!CUSTOM[*]} " =~ " $1 " ]]; then
+        echo $CUSTOM[$1]
+    fi
+}
+
+# stows all packages specified on the arrays
+function restow {
+    # Oh nooo, it's not eficient! Anyways...
+    local packs="${HOME_PKG[@]} ${HOME_INDEP_PKG[@]}
+     ${CONFIG_PKG[@]} ${CONFIG_INDEP_PKG[@]} ${!CUSTOM[@]}"
+    for package in $packs ; do
+        mystow $package $(get_pkg_dir $package)
+    done
+}
+
+# given a package name and directory, 
+# stows it (creating directory if necessary)
+function mystow {
+    if [ ! -d $2 ]; then
+        mkdir -p $2
+    fi
+    stow -Rv $1 -t $2
+}
+
+
+if [ $# -gt 0 ]; then
+    unstowing=0
+    if [ $1 == -D ]; then
+        unstowing=1
+        shift
+    fi
+    while [ $# -gt 0 ]; do
+        target_dir=$(get_pkg_dir $1)
+        if [[ $target_dir ]]; then
+            if [ $unstowing -eq 1 ]; then
+                stow -Dv $1 -t $target_dir
+                echo "$1 unstowed from $target_dir"
+            else
+                mystow $1 $target_dir
+                echo "$1 stowed at $target_dir"
+            fi
+        else
+            echo "WARNING: Package $1 not found, avoiding"
+        fi
+        shift
+    done
+else
+    echo "Restowing all packages..."
+    restow
+fi
+
+
