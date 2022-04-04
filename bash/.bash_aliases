@@ -28,9 +28,21 @@ alias scp="scp -F $HOME/.ssh/config "
 alias f5upc="f5fpc -s -x -t https://upclink.upc.edu"
 
 # Folders
-alias uni="cd ~/nextcloud/Acadèmic/Universitat/Q4"
-alias next="cd ~/nextcloud"
+next="$HOME/nextcloud"
+uni="$next/Acadèmic/Universitat/Q4"
+ec="$uni/ec"
+ci="$uni/ci"
+so="$uni/so"
+bd="$uni/bd"
+top="$uni/top"
+fvc="$uni/fvc"
+
+# Files
+alias uni="cd $uni"
+alias next="cd $next"
 alias dot="cd ~/dotfiles"
 alias aliasedit="vim ~/.bash_aliases; source ~/.bashrc"
 alias stowedit="vim ~/dotfiles/autostow && autostow"
 alias postinstalledit="vim ~/dotfiles/postinstall.sh"
+
+

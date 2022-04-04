@@ -3,7 +3,7 @@
 ### Apps, Launcher & Co.
 # Terminal emulator
 super + Return
-	alacritty
+	kitty
 
 # Program launcher (dmenu and rofi)
 super + @space
@@ -21,6 +21,9 @@ super + d
 
 super + x
     dmenufm
+
+super + c
+    google-calendar-nativefier
 
 # Patch while autostart does not work
 super + Home

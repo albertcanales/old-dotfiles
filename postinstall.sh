@@ -33,6 +33,7 @@ SYSTEM_PAC=(
     lxappearance
     network-manager-applet
     wireguard-tools
+    kitty
 )
 
 SYSTEM_AUR=(

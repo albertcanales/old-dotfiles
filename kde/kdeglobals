@@ -139,8 +139,8 @@ ForegroundVisited=155,89,182
 BrowserApplication=firefox.desktop
 ColorScheme=BreathDark
 Name=Breath2
-TerminalApplication=alacritty
-TerminalService=Alacritty.desktop
+TerminalApplication=kitty
+TerminalService=kitty.desktop
 shadeSortColumn=true
 toolBarFont=Noto Sans,10,-1,5,50,0,0,0,0,0
 

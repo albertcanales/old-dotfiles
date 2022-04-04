@@ -39,6 +39,7 @@ CONFIG_INDEP_PKG=(
     dmenufm
     spicetify
     xournalpp
+    kitty
 )
 
 # packages going to custom directory

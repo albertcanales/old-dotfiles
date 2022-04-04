@@ -17,7 +17,7 @@ function web_exists {
 
 # Non-Network dependant programs
 todoist > /dev/null &
-joplin-desktop > /dev/null &
+$HOME/Applications/Joplin_37553f2601a9dbbcc9d0c4fb22605c9b.AppImage > /dev/null &
 thunderbird > /dev/null &
 whatsapp-nativefier-dark > /dev/null &
 telegram-desktop > /dev/null &

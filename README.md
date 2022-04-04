@@ -8,7 +8,7 @@ Currently running Manjaro, bspwm and Polybar.
 Theme         = Dracula
 WM            = bspwm
 Bar           = Polybar
-Terminal      = alacritty
+Terminal      = kitty
 Font          = (pending)
 Wallpapers    = on wallpapers module
 Shell         = bash
