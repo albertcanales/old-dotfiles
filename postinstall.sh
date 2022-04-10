@@ -34,6 +34,9 @@ SYSTEM_PAC=(
     network-manager-applet
     wireguard-tools
     kitty
+    bat
+    most
+    lsd
 )
 
 SYSTEM_AUR=(

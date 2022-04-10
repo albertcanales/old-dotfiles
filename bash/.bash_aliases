@@ -9,6 +9,11 @@ alias la="ls -la"
 alias untar="tar -zxvf"
 alias sdn="sudo shutdown -h now"
 alias cl="clear"
+alias ccat="cat"
+alias cat="bat"
+alias icat="kitty +kitten icat"
+alias lls="ls"
+alias ls="lsd"
 alias cleanup-packages='(set -x; sudo pacman -R $(pacman -Qdtq))'
 alias ifconfig="nmcli"
 alias bt-reset="systemctl restart bluetooth.service"
@@ -44,5 +49,7 @@ alias dot="cd ~/dotfiles"
 alias aliasedit="vim ~/.bash_aliases; source ~/.bashrc"
 alias stowedit="vim ~/dotfiles/autostow && autostow"
 alias postinstalledit="vim ~/dotfiles/postinstall.sh"
+alias cronedit="vim ~/dotfiles/cron/crontab && crontab ~/dotfiles/cron/crontab"
+
 
 

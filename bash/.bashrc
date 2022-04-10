@@ -141,7 +141,8 @@ ex ()
 # CUSTOM
 
 export PATH=$PATH:$HOME/bin
-export EDITOR=nvim
+export EDITOR="nvim"
+export PAGER="most"
 
 # Prevents history from storing duplicating and space-starting commands
 export HISTCONTROL=ignoreboth
@@ -157,3 +158,16 @@ fi
 # 	exec fish
 # fi
 
+# Autocompleting for man
+# https://gist.github.com/j0yu/cfff2ebb74bb7e941eef0286a401aa6e
+_man ()
+{
+  local CWORD
+  CWORD="${COMP_WORDS[COMP_CWORD]}"
+  # printf 'current word "%s"\n' "$CWORD"  # For debugging
+  case "$CWORD" in
+    -* ) readarray -t COMPREPLY < <(man --help | grep -oP '\-[\w?\-]+');;
+    *) readarray -t COMPREPLY < <(man -k . | sed -n "/^$CWORD/ s/ .*//p");;
+  esac
+}
+complete -F _man man

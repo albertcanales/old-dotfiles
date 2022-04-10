@@ -8,6 +8,7 @@ HOME_PKG=(
     xinit
     bash
     feh
+    zsh
 )
 
 # packages going to $HOME/<package-name>/
