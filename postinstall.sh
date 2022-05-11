@@ -37,6 +37,7 @@ SYSTEM_PAC=(
     bat
     most
     lsd
+    strace
 )
 
 SYSTEM_AUR=(
@@ -64,6 +65,7 @@ PROG_PAC=(
     ventoy 
     brave-browser
     doxygen
+    calibre
 )
 
 PROG_AUR=(
@@ -74,7 +76,7 @@ PROG_AUR=(
     todoist-electron
     whatsapp-nativefier-dark
     google-calendar-nativefier
-    typora
+    marktext
 )
 
 
