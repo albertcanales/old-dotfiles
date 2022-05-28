@@ -25,7 +25,6 @@ CONFIG_PKG=(
 
 # packages going to $CONFIG_DIR/<package-name>
 CONFIG_INDEP_PKG=(
-    alacritty
     nvim
     joplin-desktop
     plasma-workspace
@@ -36,7 +35,6 @@ CONFIG_INDEP_PKG=(
     zathura
     sublime-text-3
     picom
-    Typora
     dmenufm
     spicetify
     xournalpp

@@ -19,6 +19,7 @@ alias ifconfig="nmcli"
 alias bt-reset="systemctl restart bluetooth.service"
 alias homeup="sudo wg-quick up home"
 alias homedown="sudo wg-quick down home"
+alias homeinfo="sudo wg"
 
 # Programs
 alias gs="git status"
@@ -32,6 +33,7 @@ alias dades="source dades"
 alias scp="scp -F $HOME/.ssh/config "
 alias f5upc="f5fpc -s -x -t https://upclink.upc.edu"
 alias sshconf="kitty +kitten ssh "
+alias idea="export _JAVA_AWT_WM_NONREPARENTING=1;idea"
 
 # Folders
 next="$HOME/nextcloud"

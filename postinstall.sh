@@ -4,7 +4,7 @@ user="albert"
 
 # Additionally the following packages are installed on Appimages 
 # due to faulty pacman or yay packages
-# Joplin, Nextcloud Client 
+# Joplin, Todoist
 
 SYSTEM_PAC=(
     base-devel
@@ -17,6 +17,7 @@ SYSTEM_PAC=(
     sxhkd
     rofi
     picom
+    polybar
     dunst ttf-roboto ttf-roboto-mono
     stalonetray # Necessary for polybar
     brightnessctl
@@ -28,25 +29,24 @@ SYSTEM_PAC=(
     dateutils # oneliners for dates
     arandr # gui for xrandr
     playerctl
-    ttf-jetbrains-mono
     xf86-input-wacom
     lxappearance
-    network-manager-applet
     wireguard-tools
     kitty
     bat
     most
     lsd
     strace
+    btop
 )
 
 SYSTEM_AUR=(
     betterlockscreen
-    polybar-git # Necessary as long as release version is < 3.5.6
     dmenufm
 )
 
 PROG_PAC=(
+    firefox
     arduino arduino-avr-code
     audacity
     discord
@@ -62,10 +62,9 @@ PROG_PAC=(
     gparted
     transmission-gtk
     telegram
-    ventoy 
-    brave-browser
     doxygen
     calibre
+    nextcloud-client
 )
 
 PROG_AUR=(
@@ -77,6 +76,8 @@ PROG_AUR=(
     whatsapp-nativefier-dark
     google-calendar-nativefier
     marktext
+    mailspring
+    tor-browser
 )
 
 
