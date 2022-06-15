@@ -13,16 +13,15 @@ alias ccat="/usr/bin/cat"
 alias cat="bat"
 alias icat="kitty +kitten icat"
 alias lls="/usr/bin/ls"
-alias ls="lsd"
+alias ls="lsd -hA"
+alias tree="lsd --tree"
 alias cleanup-packages='(set -x; sudo pacman -R $(pacman -Qdtq))'
 alias ifconfig="nmcli"
 alias bt-reset="systemctl restart bluetooth.service"
-alias homeup="sudo wg-quick up home"
-alias homedown="sudo wg-quick down home"
-alias homeinfo="sudo wg"
 
 # Programs
 alias gs="git status"
+alias gd="git diff"
 alias addall="git add --all"
 alias vim="nvim"
 alias eog="gwenview"
@@ -54,3 +53,7 @@ alias stowedit="vim ~/dotfiles/autostow && autostow"
 alias postinstalledit="vim ~/dotfiles/postinstall.sh"
 alias cronedit="vim ~/dotfiles/cron/crontab && crontab ~/dotfiles/cron/crontab"
 
+
+function mmkdir() {
+    mkdir $1 && cd $1
+}

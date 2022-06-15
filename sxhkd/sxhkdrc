@@ -22,10 +22,6 @@ super + d
 super + x
     dmenufm
 
-super + c
-    google-calendar-nativefier
-
-# Patch while autostart does not work
 super + Home
     $HOME/bin/startup
 
@@ -43,6 +39,9 @@ super + Delete
 
 super + F5
     $HOME/bin/monitors
+
+super + v
+    gksu $HOME/bin/home
 
 #
 # Media keys

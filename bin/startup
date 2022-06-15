@@ -16,7 +16,7 @@ function web_exists {
 }
 
 # Non-Network dependant programs
-todoist > /dev/null &
+$HOME/Applications/Todoist-1.0.7_471e9ca8578883d5b21ae682235b8003.AppImage > /dev/null &
 $HOME/Applications/Joplin_37553f2601a9dbbcc9d0c4fb22605c9b.AppImage > /dev/null &
 mailspring > /dev/null &
 whatsapp-nativefier-dark > /dev/null &

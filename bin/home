@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Script to easily connect to Wireguard VPN
+
+# Requirements: wireguard-tools, nmcli
+
+# Usage: home [OPTION]
+## Where MODE can be:
+#   - up: Connects to VPN
+#   - down: Disconnects to VPN
+#   - status||info: Shows if connection is established
+#   - [default]: Toggles connection
+
+# Wireguard interface used in the script
+WG_INTERFACE="home"
+
+function up {
+    sudo wg-quick up "$WG_INTERFACE" && echo "Wireguard connected" || echo "Error while connecting to Wireguard"
+}
+
+function down {
+    sudo wg-quick down "$WG_INTERFACE" && echo "Wireguard disconnected" || echo "Error while disconnecting to Wireguard"
+}
+
+case "$1" in
+    up )
+        up
+        ;;
+    down )
+        down
+        ;;
+    status|info )
+        sudo wg
+        ;;
+    * )
+        [[ $(sudo wg) ]] && down || up
+        ;;
+esac
