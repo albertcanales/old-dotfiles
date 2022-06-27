@@ -38,6 +38,7 @@ SYSTEM_PAC=(
     lsd
     strace
     btop
+    fd procs ripgrep # Rust alternatives to GNU coreutils
 )
 
 SYSTEM_AUR=(
@@ -65,6 +66,7 @@ PROG_PAC=(
     doxygen
     calibre
     nextcloud-client
+    tokei
 )
 
 PROG_AUR=(

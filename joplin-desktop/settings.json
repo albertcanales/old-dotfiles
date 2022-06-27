@@ -34,5 +34,14 @@
 	"windowContentZoomFactor": 120,
 	"editor.codeView": true,
 	"style.editor.contentMaxWidth": 600,
-	"style.editor.fontSize": 15
+	"style.editor.fontSize": 15,
+	"folders.sortOrder.field": "title",
+	"notes.sortOrder.reverse": true,
+	"notes.perFieldReverse": {
+		"user_updated_time": true,
+		"user_created_time": true,
+		"title": false,
+		"order": true
+	},
+	"notes.sortOrder.field": "user_updated_time"
 }

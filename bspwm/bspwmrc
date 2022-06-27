@@ -22,10 +22,9 @@ bspc config ignore_ewmh_focus true
 # Rules for bspwm
 bspc rule -a Zathura state=tiled
 bspc rule -a Joplin desktop=9
-bspc rule -a Todoist desktop=4
+bspc rule -a Todoist desktop=2
 bspc rule -a whatsapp-nativefier-d52542 desktop=10
 bspc rule -a TelegramDesktop desktop=10
-bspc rule -a Spotify desktop=2
 bspc rule -a Mailspring desktop=1
 
 

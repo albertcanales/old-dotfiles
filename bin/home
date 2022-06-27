@@ -2,7 +2,7 @@
 
 # Script to easily connect to Wireguard VPN
 
-# Requirements: wireguard-tools, nmcli
+# Requirements: wireguard-tools
 
 # Usage: home [OPTION]
 ## Where MODE can be:
