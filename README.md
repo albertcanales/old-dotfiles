@@ -1,6 +1,14 @@
-A simple repository for managing my dotfiles, using my own system based on GNU Stow.
+A simple repository for managing my dotfiles.
 
-Currently running Manjaro, bspwm and Polybar.
+Right now divided into two branches:
+- master: For my current dotfiles
+- arch: For a complete new system build on Arch and Ansible
+
+Eventually, the second is going to replace the first. The rest of the README contains the information for master.
+
+, using my own system based on GNU Stow.
+
+Currently running Manjaro, bspwm, Polybar and my own automation system based on GNU Stow.
 
 ## Info
 
@@ -9,7 +17,7 @@ Theme         = Dracula
 WM            = bspwm
 Bar           = Polybar
 Terminal      = kitty
-Font          = (pending)
+Font          = Source Code Pro
 Wallpapers    = on wallpapers module
 Shell         = bash
 Editor        = Sublime or nvim
@@ -58,3 +66,4 @@ Automates the downloading of all my used packages, dividing the system ones from
 Must be run as root, and the variable `user` stores the name of the non-root user (available with `whoami`).
 
 When executed, the program only installs the desired set of packages. For modifying the packages, use the arrays defined at the start of `postinstall.sh`.
+
