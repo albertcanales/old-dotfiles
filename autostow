@@ -38,6 +38,7 @@ CONFIG_INDEP_PKG=(
     spicetify
     xournalpp
     kitty
+    btop
 )
 
 # packages going to custom directory
