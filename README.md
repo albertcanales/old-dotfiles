@@ -1,11 +1,8 @@
+**This dotfiles managing system has been replaced by [this one](https://github.com/albertcanales/dotfiles).**
+
+* * *
+
 A simple repository for managing my dotfiles.
-
-Right now divided into two branches:
-
-- master: For my current dotfiles
-- arch: For a complete new system build on Arch and Ansible
-
-Eventually, the second is going to replace the first. The rest of the README contains the information for master.
 
 Currently running Manjaro, bspwm, Polybar and my own automation system based on GNU Stow.
 
